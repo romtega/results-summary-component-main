@@ -1,0 +1,95 @@
+:root {
+  --color-red: hsl(0, 100%, 67%);
+  --color-yellow: hsl(39, 100%, 56%);
+  --color-green: hsl(166, 100%, 37%);
+  --color-blue: hsl(234, 85%, 45%);
+
+  --color-bg-blue-slate: hsl(252, 100%, 67%);
+  --color-bg-blue-royal: hsl(241, 81%, 54%);
+
+  --color-blue-violet: hsla(256, 72%, 46%, 1);
+  --color-blue-persian: hsla(241, 72%, 46%, 0);
+
+  --color-white: hsl(0, 0%, 100%);
+  --color-blue-pale: hsl(221, 100%, 96%);
+  --color-lavender: hsl(241, 100%, 89%);
+  --color-blue-dark: hsl(224, 30%, 27%);
+
+  --light-font: 500;
+  --regular-font: 700;
+  --bold-font: 800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--color-blue-dark);
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+  flex: 50%;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  background-color: var(--color-blue-dark);
+  color: var(--color-white);
+  border: 0;
+  padding: 1.5rem 5rem;
+  border-radius: 25px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--color-bg-blue-royal);
+  transition: all 3ms;
+}
+
+.heading-primary {
+  color: var(--color-lavender);
+  font-weight: var(--bold-font);
+  font-size: 2.4rem;
+}
+
+.heading-secondary {
+  font-weight: var(--bold-font);
+}
+
+.results {
+  flex-basis: 50%;
+}
+
+.summary {
+  flex-basis: 50%;
+}
+
+@media (min-width: 789px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+}
