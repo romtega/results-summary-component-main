@@ -1,11 +1,15 @@
 :root {
   --color-red: hsl(0, 100%, 67%);
+  --color-bg-red: hsl(0, 100%, 98%);
   --color-yellow: hsl(39, 100%, 56%);
+  --color-bg-yellow: hsl(39, 100%, 98%);
   --color-green: hsl(166, 100%, 37%);
+  --color-bg-green: hsl(166, 100%, 98%);
   --color-blue: hsl(234, 85%, 45%);
+  --color-bg-blue: hsl(234, 85%, 98%);
 
   --color-bg-blue-slate: hsl(252, 100%, 67%);
-  --color-bg-blue-royal: hsl(241, 81%, 54%);
+  --color-bg-blue-royal: hsl(241, 81%, 57%);
 
   --color-blue-violet: hsla(256, 72%, 46%, 1);
   --color-blue-persian: hsla(241, 72%, 46%, 0);
@@ -14,6 +18,7 @@
   --color-blue-pale: hsl(221, 100%, 96%);
   --color-lavender: hsl(241, 100%, 89%);
   --color-blue-dark: hsl(224, 30%, 27%);
+  --color-blue-gray: hsl(224, 30%, 70%);
 
   --light-font: 500;
   --regular-font: 700;
@@ -36,6 +41,9 @@ svg {
 }
 
 body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
   font-family: "Hanken Grotesk", sans-serif;
   color: var(--color-blue-dark);
 }
@@ -46,50 +54,185 @@ body {
 
 .flex {
   display: flex;
-  flex: 50%;
+}
+
+.flex-cl {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heading-primary {
+  color: var(--color-lavender);
+  font-weight: var(--regular-font);
+  font-size: 2.2rem;
+}
+
+.heading-secondary {
+  font-weight: var(--bold-font);
+  font-size: 2.2rem;
+}
+
+.heading-tertiary {
+  font-weight: var(--regular-font);
+  font-size: 1.6rem;
+}
+
+.bold {
+  font-weight: var(--bold-font);
+}
+
+.regular {
+  font-weight: var(--regular-font);
 }
 
 .btn,
 .btn:link,
 .btn:visited {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  border-radius: 100vw;
+  padding: 1.4rem 2.8rem;
   background-color: var(--color-blue-dark);
   color: var(--color-white);
-  border: 0;
-  padding: 1.5rem 5rem;
-  border-radius: 25px;
-  display: inline-block;
-  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.6rem;
 }
 
 .btn:hover,
 .btn:active {
-  background-color: var(--color-bg-blue-royal);
-  transition: all 3ms;
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
 
-.heading-primary {
-  color: var(--color-lavender);
-  font-weight: var(--bold-font);
-  font-size: 2.4rem;
+.red {
+  background-color: var(--color-bg-red);
+}
+.yellow {
+  background-color: var(--color-bg-yellow);
+}
+.green {
+  background-color: var(--color-bg-green);
+}
+.blue {
+  background-color: var(--color-bg-blue);
 }
 
-.heading-secondary {
-  font-weight: var(--bold-font);
+.results-summary {
+  max-width: 65rem;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 18px 18px 27px 5px rgba(235, 241, 255, 0.7);
 }
 
 .results {
   flex-basis: 50%;
+  align-items: center;
+  text-align: center;
+  border-radius: inherit;
+  gap: 3rem;
+  padding: 4rem 3.6rem;
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  color: var(--color-white);
 }
 
 .summary {
   flex-basis: 50%;
+  gap: 3rem;
+  padding: 4rem 3.6rem;
 }
 
-@media (min-width: 789px) {
-  body {
-    min-height: 100vh;
-    display: grid;
-    justify-items: center;
-    align-items: center;
+.results-score {
+  place-content: center;
+  border-radius: 50%;
+  width: 18rem;
+  aspect-ratio: 1;
+  background-image: linear-gradient(
+    var(--color-blue-violet),
+    var(--color-bg-blue-royal)
+  );
+}
+
+.results-score span {
+  display: block;
+  font-size: 6.2rem;
+  color: var(--color-white);
+}
+
+.results-score p {
+  font-size: 1.6rem;
+  color: var(--color-blue-gray);
+}
+
+.results-text {
+  gap: 1.4rem;
+}
+
+.results-rank {
+  font-size: 2.8rem;
+}
+
+.results-description {
+  line-height: 1.4;
+  font-size: 1.5rem;
+  margin: 0 2.4rem;
+  color: var(--color-blue-gray);
+}
+
+.summary-scores {
+  gap: 1.4rem;
+}
+
+.summary-row {
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 1.4rem;
+}
+
+.red h3 {
+  color: var(--color-red);
+}
+
+.yellow h3 {
+  color: var(--color-yellow);
+}
+
+.green h3 {
+  color: var(--color-green);
+}
+
+.blue h3 {
+  color: var(--color-blue);
+}
+
+.row-left {
+  gap: 1rem;
+}
+
+.row-right {
+  font-size: 1.4rem;
+  color: var(--color-blue-gray);
+  font-weight: var(--bold-font);
+}
+
+.row-right span {
+  font-size: 1.6rem;
+  color: var(--color-blue-dark);
+}
+
+@media (max-width: 789px) {
+  .results-summary {
+    flex-direction: column;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    gap: 0;
+  }
+
+  .results {
+    padding: 2.8rem 3.6rem;
+  }
+
+  .summary {
+    padding: 2.8rem 3.6rem;
   }
 }
