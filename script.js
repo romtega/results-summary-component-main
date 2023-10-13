@@ -20,6 +20,7 @@ function updateData(category, score, icon, data) {
 
   const iconContainer = document.createElement("img");
   iconContainer.src = data.icon;
+  iconContainer.alt = `${data.category} icon`;
   icon.appendChild(iconContainer);
 }
 
